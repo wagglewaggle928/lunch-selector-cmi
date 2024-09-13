@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>午餐选择器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        .container {
+            padding: 20px;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 5px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #ff6600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>午餐选择器</h1>
+        <p>不知道吃什么？点一下随机选择吧！</p >
+        <button onclick="chooseLunch()">选择午餐</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        const lunchOptions = [
+            "市民麻辣香锅", "凤凰孔一凡", "沙县小吃", "卓悦敏华", "麻辣烫",
+            "石锅拌饭", "麦当劳", "肯德基", "胡辣汤", "喜家德", "螺狮粉", 
+            "凤凰粿条", "马记永", "食堂5层", "食堂6层", "食堂7层", 
+            "云南米线", "贵州米线", "小杨生煎", "酸菜鱼"
+        ];
+
+        function chooseLunch() {
+            const randomIndex = Math.floor(Math.random() * lunchOptions.length);
+            const lunch = lunchOptions[randomIndex];
+            document.getElementById("result").innerText = "今天的午餐是: " + lunch + "！";
+        }
+    </script>
+
+</body>
+</html>
